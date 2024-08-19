@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .all {
+            display: block;
+            position: absolute;
+            top: 20%;
+            left: 25%;
+        }
+
+        #Picture-select {
+            width: 100px;
+            height: 20px;
+            text-align: center;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div>
+            <img src="image/144p.png" alt="" style="height: 200px;width: 200px;" class="content">
+        </div>
+        <div class="selecter">
+            <select name="Picture quality" id="Picture-select">
+                <option value="144p">144p</option>
+                <option value="240p">240p</option>
+                <option value="480p">480p</option>
+                <option value="720p">720p</option>
+                <option value="1080p">1080p</option>
+            </select>
+        </div>
+    </div>
+</body>
+
+<script>
+    const content = document.querySelector('.content')
+    // console.log(content);
+    document.querySelector('#Picture-select').addEventListener('change', function (e) {
+        // console.log(e.target.tagName);
+        if (e.target.tagName === 'SELECT') {
+            // console.log(this.value);
+            content.src = `image/${this.value}.png`
+        }
+    })
+</script>
+
+</html>
